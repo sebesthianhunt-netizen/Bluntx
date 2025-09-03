@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: BLVKDOT API
+  version: 0.1.0
+paths:
+  /auth/login:
+    post:
+      summary: User login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                phone:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Successful login
+  # ...Expand with all endpoints per backend prompt

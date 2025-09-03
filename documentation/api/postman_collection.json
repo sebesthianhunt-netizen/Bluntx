@@ -1,0 +1,25 @@
+{
+  "info": {
+    "name": "BLVKDOT API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "login"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone\": \"\", \"password\": \"\"}"
+        }
+      }
+    }
+    // ...Add requests for all other endpoints
+  ]
+}

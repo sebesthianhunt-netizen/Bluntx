@@ -1,0 +1,196 @@
+{
+  "global": {
+    "app_name": "BLVKDOT",
+    "brand_slogan": "One Shot. One King.",
+    "welcome": "Welcome, King! Are you ready to own the table?",
+    "lets_go": "Let’s Go!",
+    "cancel": "No Wahala, Maybe Later",
+    "close": "Close",
+    "continue": "Oya, Continue",
+    "save": "Save Am",
+    "back": "Back, Abeg"
+  },
+  "auth": {
+    "onboarding_headline": "Step into the lounge. Streets dey watch.",
+    "onboarding_sub": "No dulling, make you show your moves.",
+    "otp_prompt": "Enter your one-time code, sharp sharp.",
+    "otp_error": "Na wrong code, try again.",
+    "nickname_prompt": "Pick your street name, superstar.",
+    "avatar_prompt": "Choose your avatar – Make dem sabi you.",
+    "calibration_intro": "Warm up! Pot 10 balls, let’s see your level.",
+    "calibration_done": "E choke! You don ready.",
+    "login_cta": "Enter the Game",
+    "signup_cta": "Sign Up & Rack Up"
+  },
+  "home": {
+    "dashboard_greet": "How far, {nickname}? E be like say today na your day!",
+    "wallet_balance": "Wallet Balance",
+    "wallet_topup": "Top Up Wallet",
+    "wallet_withdraw": "Cash Out",
+    "quick_play": "Quick Match",
+    "join_crew": "Join Crew",
+    "view_leaderboard": "Show Me Kings",
+    "book_table": "Book Your Table",
+    "challenge_someone": "Call Out Challenger",
+    "feed_title": "Hype Feed",
+    "feed_empty": "No gist yet. Be the first to make noise!"
+  },
+  "booking": {
+    "calendar_title": "Pick your slot, no go carry last.",
+    "slot_booked": "Table don set! Your time: {time}.",
+    "booking_confirm": "Confirm Booking",
+    "booking_success": "Booking sharp! See you for club.",
+    "booking_fail": "Booking fail o. Try again.",
+    "waitlist_join": "All tables full? Join waitlist, e go soon reach you.",
+    "upsell_pro_cue": "Add Pro Cue – Just ₦{amount}",
+    "upsell_night_owl": "Night Owl Special – 15% off after 10pm!",
+    "qr_ticket": "Show this QR at the door. Table dey wait!"
+  },
+  "wallet": {
+    "fund_wallet": "Top up with Paystack, Flutterwave, or Monnify.",
+    "choose_amount": "How much you wan drop?",
+    "withdraw_cash": "Cash out your winnings!",
+    "transfer_user": "Send Money to Padi",
+    "transaction_history": "See Transaction Gist",
+    "payment_success": "Oya! Wallet don fat.",
+    "payment_failed": "Payment fail. Abeg try again.",
+    "no_data": "No Data? No Wahala! Use USSD or SMS.",
+    "rate_limit": "Oga, slow down – money dey run, not fly.",
+    "escrow_notice": "Funds locked for challenge. Winner go collect."
+  },
+  "challenge": {
+    "challenge_title": "Throw Down Challenge",
+    "pick_opponent": "Select who you go show.",
+    "stake_prompt": "How much you dey stake?",
+    "insurance_toggle": "Add Insurance (just in case)",
+    "challenge_sent": "Challenge sent! Wait make dem answer.",
+    "challenge_received": "{name} don challenge you! Accept or dodge?",
+    "accept": "Accept & Show",
+    "decline": "Dodge Am",
+    "counter": "Counter Offer",
+    "pending": "Challenge dey pending...",
+    "in_play": "Game dey on!",
+    "completed": "E don finish! Winner go chop.",
+    "disputed": "Wahala dey! Dispute reported.",
+    "expired": "Challenge expire – Next time, move fast.",
+    "result_win": "You be King! Collect your winnings.",
+    "result_lose": "No vex, try again next time.",
+    "challenge_history": "See Past Challenges"
+  },
+  "crew": {
+    "crew_home": "Your Crew",
+    "join_crew": "Join Crew",
+    "create_crew": "Form Your Own Squad",
+    "crew_war": "Start Crew War",
+    "crew_leaderboard": "Crew Kings",
+    "invite_friends": "Invite Your Guys",
+    "crew_feed": "Crew Banter",
+    "crew_chat": "Talk Your Mind",
+    "crew_perks": "Unlock Crew Perks",
+    "crew_challenge": "Challenge Another Crew"
+  },
+  "tournament": {
+    "tournament_list": "All Tournaments",
+    "register": "Register Now",
+    "bracket_view": "See Bracket",
+    "live_updates": "Live Scores",
+    "winner_announcement": "Big Winner: {name}! Respect.",
+    "tourney_leaderboard": "Tournament Kings",
+    "tourney_joined": "You don join – Get ready!",
+    "tourney_full": "Omo, e full! Try next one."
+  },
+  "shotlab": {
+    "practice_mode": "Practice Mode – Sharpen your skills.",
+    "start_drill": "Start Drill",
+    "drill_locked": "Unlock this drill for extra street cred.",
+    "drill_completed": "You finish am! See your stats.",
+    "drill_leaderboard": "ShotLab Kings",
+    "paid_drill": "Pro Drill – Buy to unlock secret sauce."
+  },
+  "feed": {
+    "clips_feed": "Clips & Gist",
+    "share_clip": "Share to WhatsApp, IG, or TikTok",
+    "no_clips": "No clips yet. Time to make history.",
+    "like_clip": "Give am 5 stars!",
+    "report_clip": "See something? Report quick."
+  },
+  "notifications": {
+    "new_challenge": "You get new challenge from {name}",
+    "challenge_accepted": "Challenge accepted – get ready!",
+    "challenge_declined": "Challenge declined – try another King.",
+    "booking_reminder": "No forget your table at {time}",
+    "wallet_funded": "Wallet don receive – money dey.",
+    "result_update": "Game result: {result}.",
+    "crew_invite": "You get crew invite from {crew}.",
+    "promo_alert": "Promo dey! {promo_detail}",
+    "tourney_reminder": "Your tournament dey start soon!"
+  },
+  "error": {
+    "network_down": "Network dey fumble. We go try again.",
+    "retry": "Abeg, try again.",
+    "unexpected": "Wetin dey happen? Something go wrong.",
+    "form_error": "Fill am well, abeg.",
+    "not_found": "Nothing dey here yet.",
+    "server_error": "Server dey sleep. Give us small time."
+  },
+  "cta": {
+    "join_now": "Join Now, King!",
+    "play_now": "Play Now – No Dulling!",
+    "challenge_now": "Challenge Someone",
+    "top_up": "Top Up – Make Wallet Baff Up",
+    "invite_crew": "Invite My Guys",
+    "register_tourney": "Register for Tournament",
+    "start_drill": "Start Practice",
+    "share_clip": "Share Your Moment",
+    "shop_merch": "Shop King Merch",
+    "see_leaderboard": "See Who Dey Top",
+    "cash_out": "Cash Out Now"
+  },
+  "marketing": {
+    "main_headline": "Rack Up. Show Up. Be King.",
+    "sub_headline": "No be by mouth – show your skills!",
+    "download_cta": "Download BLVKDOT, join the streets.",
+    "promo_banner": "Rack this week, win extra loot!",
+    "referral": "Bring your squad, chop bonus together.",
+    "social_proof": "Over {number} Kings and Queens dey ball here.",
+    "testimonial_1": "“BLVKDOT na gbedu! I dey win, I dey cash out.” – Tunde",
+    "testimonial_2": "“E sure for me! My crew dey run things for here.” – Ada",
+    "limited_offer": "Limited time: Double XP for new Kings. Oya, join!"
+  },
+  "gamification": {
+    "xp_gain": "+{xp} XP – You dey climb!",
+    "level_up": "Congrats! You don level up.",
+    "badge_earned": "Badge unlocked: {badge}",
+    "streak_on": "Streak dey burn – keep am up!",
+    "complete_quest": "Quest complete! Collect your loot.",
+    "daily_quest": "Today’s Quest: {quest}",
+    "season_pass": "Unlock Season Pass – Chop more rewards!"
+  },
+  "safety": {
+    "report_user": "See wahala? Tap here to report.",
+    "block_user": "Block this user – dem no go disturb you again.",
+    "safe_venue": "Verified Safe Venue",
+    "emergency": "Emergency? Call venue staff quick."
+  },
+  "support": {
+    "help_headline": "Need help? We dey your back.",
+    "faq": "See FAQ",
+    "contact_support": "Contact Support",
+    "report_issue": "Report Issue",
+    "chat_with_us": "Chat with Us",
+    "feedback": "Drop Feedback – We dey hear you."
+  },
+  "legal": {
+    "tos": "By using BLVKDOT, you agree to our Terms of Service.",
+    "privacy": "Your data dey safe with us.",
+    "age_gate": "You gats be 18+ to play for money."
+  },
+  "offline": {
+    "offline_mode": "No network? Play practice mode, rack up offline.",
+    "reconnect": "Trying to reconnect…"
+  },
+  "data_saver": {
+    "activate": "Data dey finish? Switch to Data Saver mode.",
+    "activated": "Data Saver mode dey on – enjoy!"
+  }
+}
