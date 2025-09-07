@@ -1,0 +1,27 @@
+{
+  "info": {
+    "name": "BLVKDOT API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8000/api/v1" },
+    { "key": "token", "value": "" }
+  ],
+  "item": [
+    { "name": "Auth - Login", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth","login"] }, "body": { "mode": "raw", "raw": "{\n  \"phone\": \"+2348012345678\"\n}" } } },
+    { "name": "Auth - Verify OTP", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "url": { "raw": "{{baseUrl}}/auth/otp/verify", "host": ["{{baseUrl}}"], "path": ["auth","otp","verify"] }, "body": { "mode": "raw", "raw": "{\n  \"phone\": \"+2348012345678\",\n  \"code\": \"123456\"\n}" } } },
+    { "name": "Wallet - Show", "request": { "method": "GET", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/wallet", "host": ["{{baseUrl}}"], "path": ["wallet"] } } },
+    { "name": "Wallet - Fund", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" } ], "url": { "raw": "{{baseUrl}}/wallet/fund", "host": ["{{baseUrl}}"], "path": ["wallet","fund"] }, "body": { "mode": "raw", "raw": "{\n  \"amount\": 1000,\n  \"payment_provider\": \"paystack\"\n}" } } },
+    { "name": "Wallet - Withdraw", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" } ], "url": { "raw": "{{baseUrl}}/wallet/withdraw", "host": ["{{baseUrl}}"], "path": ["wallet","withdraw"] }, "body": { "mode": "raw", "raw": "{\n  \"amount\": 1000,\n  \"payment_provider\": \"paystack\",\n  \"destination\": { \"account_number\": \"0000000000\", \"bank_code\": \"000\", \"agent_user_id\": 2 }\n}" } } },
+    { "name": "Wallet - Withdraw Confirm", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/wallet/withdraw/REF123/confirm", "host": ["{{baseUrl}}"], "path": ["wallet","withdraw","REF123","confirm"] } } },
+    { "name": "Wallet - Withdraw Cancel", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/wallet/withdraw/REF123/cancel", "host": ["{{baseUrl}}"], "path": ["wallet","withdraw","REF123","cancel"] } } },
+    { "name": "Wallet - Tx Status", "request": { "method": "GET", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/wallet/tx/REF123", "host": ["{{baseUrl}}"], "path": ["wallet","tx","REF123"] } } },
+    { "name": "Challenge - Create", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" } ], "url": { "raw": "{{baseUrl}}/challenge", "host": ["{{baseUrl}}"], "path": ["challenge"] }, "body": { "mode": "raw", "raw": "{\n  \"opponent_id\": 2,\n  \"stake_amount\": 500\n}" } } },
+    { "name": "Booking - Create", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" } ], "url": { "raw": "{{baseUrl}}/booking", "host": ["{{baseUrl}}"], "path": ["booking"] }, "body": { "mode": "raw", "raw": "{\n  \"table_id\": 1,\n  \"start_time\": \"2025-09-03T14:00:00Z\",\n  \"end_time\": \"2025-09-03T15:00:00Z\"\n}" } } },
+    { "name": "Booking - Show", "request": { "method": "GET", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/booking/1", "host": ["{{baseUrl}}"], "path": ["booking","1"] } } },
+    { "name": "Booking - Checkin", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/booking/1/checkin", "host": ["{{baseUrl}}"], "path": ["booking","1","checkin"] } } },
+    { "name": "Booking - Checkout", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/booking/1/checkout", "host": ["{{baseUrl}}"], "path": ["booking","1","checkout"] } } },
+    { "name": "Admin - Feature Toggle", "request": { "method": "POST", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/admin/feature-toggle", "host": ["{{baseUrl}}"], "path": ["admin","feature-toggle"] } } },
+    { "name": "Admin - Audit Logs", "request": { "method": "GET", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ], "url": { "raw": "{{baseUrl}}/admin/audit", "host": ["{{baseUrl}}"], "path": ["admin","audit"] } } }
+  ]
+}

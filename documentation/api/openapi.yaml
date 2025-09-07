@@ -1,0 +1,223 @@
+openapi: 3.0.0
+info:
+  title: BLVKDOT API
+  version: 0.1.0
+paths:
+  /auth/login:
+    post:
+      summary: User login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                phone:
+                  type: string
+      responses:
+        '200':
+          description: Successful login
+  /auth/otp/verify:
+    post:
+      summary: Verify OTP and issue token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                phone: { type: string }
+                code: { type: string }
+      responses:
+        '200':
+          description: Access token issued
+  /wallet:
+    get:
+      summary: Get wallet balances
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200':
+          description: Balances
+  /wallet/fund:
+    post:
+      summary: Initiate wallet funding via provider
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                amount: { type: number }
+                payment_provider: { type: string, enum: [paystack, flutterwave, monnify] }
+      responses:
+        '200':
+          description: Checkout URL and reference
+  /wallet/withdraw:
+    post:
+      summary: Request withdrawal
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                amount: { type: number }
+                payment_provider: { type: string }
+                destination: { type: object }
+      responses:
+        '200': { description: Accepted }
+  /wallet/withdraw/{reference}/confirm:
+    post:
+      summary: Confirm withdrawal (hold -> release)
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - in: path
+          name: reference
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+  /wallet/withdraw/{reference}/cancel:
+    post:
+      summary: Cancel withdrawal (revert hold)
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - in: path
+          name: reference
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+  /wallet/tx/{reference}:
+    get:
+      summary: Get transaction status by reference
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - in: path
+          name: reference
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+  /wallet/history:
+    get:
+      summary: Recent wallet transactions
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200': { description: OK }
+  /webhooks/{provider}:
+    post:
+      summary: Provider webhooks
+      parameters:
+        - in: path
+          name: provider
+          required: true
+          schema: { type: string, enum: [paystack, flutterwave, monnify] }
+      responses:
+        '200': { description: OK }
+  /admin/feature-toggle:
+    post:
+      summary: Toggle features (admin)
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200': { description: OK }
+        '403': { description: Forbidden }
+  /admin/audit:
+    get:
+      summary: Read audit logs (admin)
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200': { description: OK }
+        '403': { description: Forbidden }
+  /challenge:
+    post:
+      summary: Create challenge (locks escrow)
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                opponent_id: { type: integer }
+                stake_amount: { type: number }
+      responses:
+        '200': { description: Created }
+  /challenge/{id}/accept:
+    post:
+      summary: Accept challenge (locks escrow)
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200': { description: OK }
+  /booking:
+    post:
+      summary: Create booking
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                table_id: { type: integer }
+                start_time: { type: string, format: date-time }
+                end_time: { type: string, format: date-time }
+                notes: { type: string }
+      responses:
+        '200': { description: OK }
+  /booking/{id}:
+    get:
+      summary: Get booking details
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200': { description: OK }
+  /booking/waitlist:
+    post:
+      summary: Join booking waitlist
+      security: [{ bearerAuth: [] }]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                venue_id: { type: integer }
+                snooker_table_id: { type: integer }
+                desired_start_time: { type: string, format: date-time }
+                desired_end_time: { type: string, format: date-time }
+      responses:
+        '200': { description: OK }
+  /booking/{id}/checkin:
+    post:
+      summary: Check-in to booking
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200': { description: OK }
+  /booking/{id}/checkout:
+    post:
+      summary: Check-out of booking
+      security: [{ bearerAuth: [] }]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200': { description: OK }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  # ...Expand with all endpoints per backend prompt
